@@ -1,0 +1,32 @@
+<button (click)="actionSheet.open()">Open Action Sheet</button>
+<button (click)="dialog.open()">Open Dialog</button>
+<button (click)="fullscreenDialog.open()">Open Fullscreen Dialog</button>
+
+<concern-action-sheet #actionSheet>
+  <h1 header>Bla bla</h1>
+  <p>
+    Fugiat ad ut proident Lorem elit elit dolore quis reprehenderit veniam tempor consequat.
+    Excepteur do consectetur sunt duis esse anim mollit consectetur cillum veniam minim sit minim
+    ad. Cupidatat enim duis velit do sit fugiat anim nisi in eiusmod minim.
+  </p>
+</concern-action-sheet>
+<concern-dialog #dialog>
+  <h1 header>Bla bla</h1>
+  <p>
+    Fugiat ad ut proident Lorem elit elit dolore quis reprehenderit veniam tempor consequat.
+    Excepteur do consectetur sunt duis esse anim mollit consectetur cillum veniam minim sit minim
+    ad. Cupidatat enim duis velit do sit fugiat anim nisi in eiusmod minim.
+  </p>
+
+  <button footer (click)="dialog.close()">Close</button>
+</concern-dialog>
+<concern-fullscreen-dialog #fullscreenDialog>
+  <h1 header>Bla bla</h1>
+  <p>
+    Fugiat ad ut proident Lorem elit elit dolore quis reprehenderit veniam tempor consequat.
+    Excepteur do consectetur sunt duis esse anim mollit consectetur cillum veniam minim sit minim
+    ad. Cupidatat enim duis velit do sit fugiat anim nisi in eiusmod minim.
+  </p>
+
+  <button footer (click)="fullscreenDialog.close()">Close</button>
+</concern-fullscreen-dialog>

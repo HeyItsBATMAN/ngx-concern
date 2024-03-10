@@ -10,6 +10,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+    "paths": {
+      "ngx-concern": [
+        "./dist/ngx-concern"
+      ]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,

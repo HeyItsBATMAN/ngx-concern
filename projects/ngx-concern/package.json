@@ -1,0 +1,19 @@
+{
+  "name": "ngx-concern",
+  "version": "0.0.3",
+  "description": "A Angular library for creating simple, unstyled dialogs/modals and action-sheets/bottom-sheets.",
+  "keywords": ["ngx", "ng", "angular", "library", "overlay", "dialog", "modal", "bottom-sheet", "action-sheet"],
+  "author": {
+    "email": "kai.niebes@outlook.com",
+    "name": "Kai Niebes",
+    "url": "https://github.com/HeyItsBATMAN"
+  },
+  "peerDependencies": {
+    "@angular/common": "^17.2.0",
+    "@angular/core": "^17.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
