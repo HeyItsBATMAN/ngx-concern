@@ -27,6 +27,7 @@ import { applyStyles } from './utility';
       height: fit-content;
       box-sizing: border-box;
       z-index: 1000001;
+      overflow-y: auto;
 
       transition: transform 0.3s ease;
       transform: translateY(100%);
