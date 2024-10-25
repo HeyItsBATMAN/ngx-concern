@@ -2,8 +2,9 @@ import type { ElementRef, OnInit } from '@angular/core';
 import { Component, inject, viewChild } from '@angular/core';
 
 import { BackdropComponent } from './backdrop.component';
-import { BaseComponent, CONCERN_BACKDROP_STYLE, CONCERN_DIALOG_STYLE } from './base.component';
+import { BaseComponent } from './base.component';
 import { applyStyles } from './utility';
+import { CONCERN_BACKDROP_STYLE, CONCERN_DIALOG_STYLE } from './provider';
 
 @Component({
   selector: 'concern-dialog',

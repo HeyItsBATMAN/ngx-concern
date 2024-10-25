@@ -1,13 +1,10 @@
-import type { ElementRef, OnInit } from '@angular/core';
+import { ElementRef, OnInit } from '@angular/core';
 import { Component, inject, viewChild } from '@angular/core';
 
 import { BackdropComponent } from './backdrop.component';
-import {
-  BaseComponent,
-  CONCERN_ACTION_SHEET_STYLE,
-  CONCERN_BACKDROP_STYLE,
-} from './base.component';
+import { BaseComponent } from './base.component';
 import { applyStyles } from './utility';
+import { CONCERN_ACTION_SHEET_STYLE, CONCERN_BACKDROP_STYLE } from './provider';
 
 @Component({
   selector: 'concern-action-sheet',
@@ -20,7 +17,7 @@ import { applyStyles } from './utility';
   `,
   styles: `
     div.action-sheet-content {
-      position: absolute;
+      position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
@@ -60,6 +57,18 @@ export class ActionSheetComponent extends BaseComponent implements OnInit {
   #defaultBackdropStyle = inject(CONCERN_BACKDROP_STYLE);
 
   ngOnInit() {
+    const enableScrolling = (enabled: boolean) => {
+      document.body.style.overflow = enabled ? '' : 'hidden';
+    };
+
+    this.content().nativeElement.addEventListener('touchstart', () => enableScrolling(false));
+    this.content().nativeElement.addEventListener('touchend', () =>
+      setTimeout(() => enableScrolling(true), 100),
+    );
+    this.content().nativeElement.addEventListener('scrollend', () =>
+      setTimeout(() => enableScrolling(true), 100),
+    );
+
     applyStyles(this.content().nativeElement, this.#defaultActionSheetStyle, this.contentStyle());
     applyStyles(this.backdrop().nativeElement, this.#defaultBackdropStyle, this.backdropStyle());
   }

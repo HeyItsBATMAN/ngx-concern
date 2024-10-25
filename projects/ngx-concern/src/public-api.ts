@@ -7,6 +7,6 @@ export {
   CONCERN_FULLSCREEN_DIALOG_STYLE,
   ConcernSettings,
   withConcernTheme,
-} from './lib/base.component';
+} from './lib/provider';
 export { DialogComponent } from './lib/dialog.component';
 export { FullscreenDialogComponent } from './lib/fullscreen-dialog.component';
